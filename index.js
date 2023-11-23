@@ -4,11 +4,15 @@ import connect from "./utils/db.js";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import productsRoute from "./routes/products.js";
+import cookieParser from 'cookie-parser'
+
 
 const app = express();
 
 //middlewares
-app.use(express.json())
+app.use(express.json());
+app.use(cookieParser());
+
 
 //Routes middlewares
 app.use("/api/auth", authRoute);
